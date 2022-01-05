@@ -1,0 +1,20 @@
+const router = require('express').Router()
+const aboutController = require('../controllers/about')
+const homeController = require('../controllers/home')
+const contactController = require('../controllers/contact')
+const blogController = require('../controllers/blog')
+const reportController = require('../controllers/report')
+const blogDetailsController = require('../controllers/blog-details')
+const mapController = require('../controllers/map')
+const helpController = require('../controllers/find-help')
+
+router.get('/', homeController.getHome)
+router.get('/about-us', aboutController.getAbout)
+router.get('/contact-us', contactController.getContact)
+router.get('/blog-list', blogController.getBlog)
+router.get('/blog-details/:id', blogDetailsController.getItem)
+router.get('/report', reportController.getReport)
+router.get('/map-list', mapController.getMap)
+router.get('/find-help', helpController.gethelp)
+
+module.exports = router

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Doccure-Cardiology</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+
+        <link href="/img/favicon.png" rel="icon" />
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="/plugins/fontawesome/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css" />
+
+        <link rel="stylesheet" href="/css/style.css" />
+
+        <!--[if lt IE 9]>
+            <script src="/js/html5shiv.min.js"></script>
+            <script src="/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <%- include('components/header')%>
+
+            <div class="breadcrumb-bar">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-md-12 col-12">
+                            <nav aria-label="breadcrumb" class="page-breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">الرئيسيه</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">تقرير الحاله</li>
+                                </ol>
+                            </nav>
+                            <h2 class="breadcrumb-title">تقرير الحاله</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="invoice-content">
+                                <div class="invoice-item">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="invoice-logo">
+                                                <img src="/img/logo.png" alt="logo" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="invoice-details"><strong>التاريخ:</strong> <span id="report_date"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="invoice-item">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="invoice-info">
+                                                <strong class="customer-text">تقرير حاله</strong>
+                                                <p class="invoice-details invoice-details-two">
+                                                    فريق عمل الكينج مريوط <br />
+                                                    معهد الحاسب الالي الكينج مريوط<br />
+                                                    الاسكندريه, مصر
+                                                </p>
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6">
+                                            <div class="invoice-info invoice-info2">
+                                                <strong class="customer-text">تفاصيل الحاله</strong>
+                                                <p class="invoice-details">
+                                                    قسم <%= title %> <br />
+                                                    تم اختيار <%= category.length %> من الاعراض
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% if(!notFound) { %>
+                                    <div class="invoice-item invoice-table-wrap mb-5">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="table-responsive">
+                                                    <table class="invoice-table table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>الاعراض</th>
+                                                                <th class="text-center">يوجد</th>
+                                                                <th class="text-center">لا يوجد</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <% for(let indication of indications) { %>
+                                                            <tr>
+                                                                <td><%= indication %></td>
+                                                                <td class="text-center <%= category.includes(indication) && "text-success" %>"><i class="fas fa-check"></i></td>
+                                                                <td class="text-center <%= !category.includes(indication) && "text-danger" %>"><i class="fas fa-times"></i></td>
+                                                            </tr>
+                                                            <% } %>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% } %> 
+
+                                <div class="other-info">
+                                    <% if(!notFound) { %>
+                                        <h3 class="text-primary mb-4">
+                                            قد تكون مريض 
+                                            (
+                                                <% disease.forEach((ele , index) => { %> 
+                                                    <%= ele.e.name %> 
+                                                    <%= disease.length > index + 1 ? "," : "" %> 
+                                                <% }) %>
+                                            )
+    
+                                        </h3>
+                                    <% } %>
+                                    <% if(notFound) { %>
+                                        <p class="text-muted">يجب عليك الذهاب لعمل الكشف الطبي اولا <a class="text-primary" href="/find-help">اضغط هنا</a></p>
+                                    <% } %>
+                                    <% disease.forEach((ele , index) => { %> 
+                                        <div class="item">
+                                            <h5 class="text-primary">- <%= ele.e.name %></h5>
+                                            <p class="text-muted">
+                                                <%= ele.e.description %>
+                                            </p>
+                                            <p class="text-muted mb-0">وتتفاوت أعراض المرض بين الأعراض الخفيفة والشديدة، وتتمثل في الاتي :</p>
+                                            <ul class="m-0 list-style-auto">
+                                                <% ele.e.indications.forEach((ele , index) => { %>
+                                                    <li><%= ele %></li>
+                                                <% }) %>
+                                            </ul>
+                                        </div>
+                                    <% }) %>
+                                    <form class="mt-5" action="/map-list" id="find_hospitals">
+                                        <span class="text-danger d-block mb-2" id="form_location_error"></span>
+                                        <fieldset>
+                                            <select class="form-select" name="location" id="help_location">
+                                                <option value="default">المحافظه التابع لها</option>
+                                                <option value='{"location":"القاهره","lat":30.044563552297866,"lng":31.236005802615843}'>القاهرة</option>
+                                                <option value='{"location":"الإسكندرية","lat":31.200031060272796,"lng":29.918759272053933}'>الإسكندرية</option>
+                                                <option value='{"location":"الإسماعيلية","lat":30.596501311103015,"lng":32.271451225151736}'>الإسماعيلية</option>
+                                                <option value='{"location":"أسوان","lat":24.088945704377885,"lng":32.8998278348301}'>أسوان</option>
+                                                <option value='{"location":"أسيوط","lat":27.1788649666826,"lng":31.185791474417655}'>أسيوط</option>
+                                                <option value='{"location":"الأقصر","lat":25.687666473134314,"lng":32.63903978451569}'>الأقصر</option>
+                                                <option value='{"location":"البحيرة","lat":31.07777331307123,"lng":30.31416046423532}'>البحيرة</option>
+                                                <option value='{"location":"بني سويف","lat":29.068143475706442,"lng":31.09975336922376}'>بني سويف</option>
+                                                <option value='{"location":"بورسعيد","lat":31.267436422247695,"lng":32.302336099599664}'>بورسعيد</option>
+                                                <option value='{"location":"جنوب سيناء","lat":29.111687027448518,"lng":33.876151465961236}'>جنوب سيناء</option>
+                                                <option value='{"location":"الجيزة","lat":30.014405429487937,"lng":31.208869741168836}'>الجيزة</option>
+                                                <option value='{"location":"الدقهلية","lat":31.14039662042048,"lng":31.503724484415276}'>الدقهلية</option>
+                                                <option value='{"location":"دمياط","lat":31.418511320994423,"lng":31.81416292320137}'>دمياط</option>
+                                                <option value='{"location":"سوهاج","lat":26.559768726760257,"lng":31.695793886490478}'>سوهاج</option>
+                                                <option value='{"location":"السويس","lat":29.968731212027823,"lng":32.549947563305196}'>السويس</option>
+                                                <option value='{"location":"الشرقية","lat":30.74007795194029,"lng":31.736305880458875}'>الشرقية</option>
+                                                <option value='{"location":"شمال سيناء","lat":30.641128202700678,"lng":33.743711841278426}'>شمال سيناء</option>
+                                                <option value='{"location":"الغربية","lat":30.924826998914504,"lng":31.06885241175745}'>الغربية</option>
+                                                <option value='{"location":"الفيوم","lat":29.350096419213347,"lng":30.64518718384289}'>الفيوم</option>
+                                                <option value='{"location":"القليوبية","lat":30.22046473805029,"lng":31.422247843623218}'>القليوبية</option>
+                                                <option value='{"location":"قنا","lat":26.156911860265463,"lng":32.716504604932325}'>قنا</option>
+                                                <option value='{"location":"كفر الشيخ","lat":31.112928285437835,"lng":30.940870875016365}'>كفر الشيخ</option>
+                                                <option value='{"location":"مطروح","lat":31.355543694367952,"lng":27.23748028236595}'>مطروح</option>
+                                                <option value='{"location":"المنوفية","lat":30.536991220759802,"lng":31.014960665275826}'>المنوفية</option>
+                                                <option value='{"location":"المنيا","lat":28.087646795116065,"lng":30.761536392516472}'>المنيا</option>
+                                                <option value='{"location":"الوادي الجديد","lat":25.545842131863594,"lng":29.30604621998797}'>الوادي الجديد</option>
+                                            </select>
+                                        </fieldset>
+                                        <button class="btn btn-info submit-btn mx-auto d-block mt-4 text-white">المستشفيات القريبه</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('components/footer')%>
+        </div>
+
+        <script src="/js/jquery-3.6.0.min.js"></script>
+
+        <script src="/js/bootstrap.bundle.min.js"></script>
+
+        <script src="/js/script.js"></script>
+    </body>
+</html>

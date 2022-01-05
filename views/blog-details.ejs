@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Doccure-Cardiology</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <link href="/img/favicon.png" rel="icon" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/plugins/fontawesome/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <%- include('components/header') %>
+
+            <div class="breadcrumb-bar">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-md-12 col-12">
+                            <nav aria-label="breadcrumb" class="page-breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">الرئيسيه</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">المدونه</li>
+                                </ol>
+                            </nav>
+                            <h2 class="breadcrumb-title"><%= item.title %></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12">
+                            <div class="blog-view">
+                                <div class="blog blog-single-post">
+                                    <div class="blog-image">
+                                        <a href="javascript:void(0);"><img alt="" src="/<%= item.img %>" class="img-fluid" /></a>
+                                    </div>
+                                    <h3 class="blog-title"><%= item.title %></h3>
+                                    <div class="blog-info clearfix">
+                                        <div class="post-left">
+                                            <ul>
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="javascript:void(0);"><img src="/img/doctors/doctor-thumb-02.jpg" alt="Post Author" /> <span><%= item.doctor %></span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-calendar"></i><%= item.date %></li>
+                                                <li><i class="far fa-comments"></i>12 تعليق</li>
+                                                <li><i class="fa fa-tags"></i><%= item.category %></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content">
+                                        <p>"لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم."</p>
+                                        <p>"سيت يتبيرسبايكياتيس يوندي أومنيس أستي ناتيس أيررور سيت فوليبتاتيم أكيسأنتييوم دولاريمكيو لايودانتيوم,توتام ريم أبيرأم,أيكيو أبسا كيواي أب أللو أنفينتوري فيرأتاتيس ايت كياسي أرشيتيكتو بيتاي فيتاي ديكاتا سيونت أكسبليكابو. نيمو أنيم أبسام فوليوباتاتيم كيواي فوليوبتاس سايت أسبيرناتشر أيوت أودايت أيوت فيوجايت, سيد كيواي كونسيكيونتشر ماجناي دولارس أيوس كيواي راتاشن فوليوبتاتيم سيكيواي نيسكايونت. نيكيو بوررو كيوايسكيوم ايست,كيواي دولوريم ايبسيوم كيوا دولار سايت أميت, كونسيكتيتيور,أديبايسكاي فيلايت, سيد كيواي نون نيومكيوام ايايوس موداي تيمبورا انكايديونت يوت لابوري أيت دولار ماجنام ألايكيوام كيوايرات فوليوبتاتيم. يوت اينايم أد مينيما فينيام, كيواس نوستريوم أكسيركايتاشيم يلامكوربوريس سيوسكايبيت لابورايوسام, نايساي يوت ألايكيوايد أكس أيا كوموداي كونسيكيواتشر؟ كيوايس أيوتيم فيل أيوم أيوري ريبريهينديرايت كيواي ان إيا فوليوبتاتي فيلايت ايسسي كيوم نايهايل موليستايا كونسيكيواتيو,فيلايليوم كيواي دولوريم أيوم فيوجايات كيو فوليوبتاس نيولا باراياتيور؟"</p>
+                                        <p>" أت فيرو ايوس ايت أكيوساميوس ايت أيوستو أودايو دايجنايسسايموس ديوكايميوس كيواي بلاندايتاييس برايسينتايوم فوليوبتاتيوم ديلينايتاي أتكيوي كورريوبتاي كيوأوس دولوريس أيت سيما يليكيوسيونت ان كيولبا كيواي أوفايكيا ديسيريونت موللايتايا انايماي, أيدي ايست لابوريوم دايستا ينستايو. نام لايبيرو تيمبور, كيوم سوليوتا نوبايس ايست ايلاجينداي أوبتايو كيومكيوي نايهايل ايمبيدايت كيو ماينيوس ايدي كيوود ماكسهيمي بلاسايت فاسيري بوسسايميوس,أومنايس فوليوبتاس ايت ايوت أسسيو ميندايست, أومنيوس دولار ريبيللينديوس. تيمبورايبيوس أيوتيم كيواس موليستاياس أكسكيبتيوراي ساينت أوككايكاتاي كيبايدايتات نون بروفايدنت أيت دولوريوم فيوجا.ايت هاريوم كيوايديم ريريوم فاكايلايسايست ايت أكسبيدايتا كيوايبيوسدام ايت أوت.</p>
+                                    </div>
+                                </div>
+                                <div class="card author-widget clearfix">
+                                    <div class="card-header">
+                                        <h4 class="card-title">نبذه عن الكاتب</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="about-author">
+                                            <div class="about-author-img">
+                                                <div class="author-img-wrap">
+                                                    <a href="javascript:void(0);"><img class="img-fluid rounded-circle" alt="" src="/img/doctors/doctor-thumb-02.jpg" /></a>
+                                                </div>
+                                            </div>
+                                            <div class="author-details">
+                                                <a href="javascript:void(0);" class="blog-author-name"><%= item.doctor %></a>
+                                                <p class="mb-0">لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card blog-comments clearfix">
+                                    <div class="card-header">
+                                        <h4 class="card-title">التعليقات (12)</h4>
+                                    </div>
+                                    <div class="card-body pb-0">
+                                        <ul class="comments-list">
+                                            <li>
+                                                <div class="comment">
+                                                    <div class="comment-author">
+                                                        <img class="avatar" alt="" src="/img/patients/patient4.jpg" />
+                                                    </div>
+                                                    <div class="comment-block">
+                                                        <span class="comment-by">
+                                                            <span class="blog-author-name">شيرين محمد</span>
+                                                        </span>
+                                                        <p>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...</p>
+                                                        <p class="blog-date">14 ديسمبر 2021</p>
+                                                        <a class="comment-btn" href="#"> <i class="fas fa-reply"></i> رد </a>
+                                                    </div>
+                                                </div>
+                                                <ul class="comments-list reply">
+                                                    <li>
+                                                        <div class="comment">
+                                                            <div class="comment-author">
+                                                                <img class="avatar" alt="" src="/img/patients/patient5.jpg" />
+                                                            </div>
+                                                            <div class="comment-block">
+                                                                <span class="comment-by">
+                                                                    <span class="blog-author-name">محمد ابراهيم</span>
+                                                                </span>
+                                                                <p>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...</p>
+                                                                <p class="blog-date">15 ديسمبر 2021</p>
+                                                                <a class="comment-btn" href="#"> <i class="fas fa-reply"></i> Reply </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="comment">
+                                                            <div class="comment-author">
+                                                                <img class="avatar" alt="" src="/img/patients/patient3.jpg" />
+                                                            </div>
+                                                            <div class="comment-block">
+                                                                <span class="comment-by">
+                                                                    <span class="blog-author-name">حسين علي</span>
+                                                                </span>
+                                                                <p>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع انترنت ...</p>
+                                                                <p class="blog-date">17 ديسمبر 2021</p>
+                                                                <a class="comment-btn" href="#"> <i class="fas fa-reply"></i> Reply </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="comment">
+                                                    <div class="comment-author">
+                                                        <img class="avatar" alt="" src="/img/patients/patient6.jpg" />
+                                                    </div>
+                                                    <div class="comment-block">
+                                                        <span class="comment-by">
+                                                            <span class="blog-author-name">دعاء شريف</span>
+                                                        </span>
+                                                        <p>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل.</p>
+                                                        <p class="blog-date">16 ديسمبر 2021</p>
+                                                        <a class="comment-btn" href="#"> <i class="fas fa-reply"></i> رد </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="comment">
+                                                    <div class="comment-author">
+                                                        <img class="avatar" alt="" src="/img/patients/patient7.jpg" />
+                                                    </div>
+                                                    <div class="comment-block">
+                                                        <span class="comment-by">
+                                                            <span class="blog-author-name">مي حلمي</span>
+                                                        </span>
+                                                        <p>لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل.</p>
+                                                        <p class="blog-date">20 ديسمبر 2021</p>
+                                                        <a class="comment-btn" href="#"> <i class="fas fa-reply"></i> رد </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-12 sidebar-right theiaStickySidebar">
+                            <div class="card search-widget">
+                                <div class="card-body">
+                                    <form class="search-form">
+                                        <div class="input-group">
+                                            <input type="text" placeholder="بحث..." class="form-control" />
+                                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="card post-widget">
+                                <div class="card-header">
+                                    <h4 class="card-title">اخر المنشورات</h4>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="latest-posts">
+                                        <% for(let blog of latestBlogs) { %>
+                                        <li>
+                                            <div class="post-thumb">
+                                                <a href="/blog-details/<%= blog._id %>">
+                                                    <img class="img-fluid" src="/<%= blog.img %>" alt="" />
+                                                </a>
+                                            </div>
+                                            <div class="post-info">
+                                                <h4>
+                                                    <a href="/blog-details/<%= blog._id %>"><%= blog.title %></a>
+                                                </h4>
+                                                <p><%= blog.date %></p>
+                                            </div>
+                                        </li>
+                                        <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card category-widget">
+                                <div class="card-header">
+                                    <h4 class="card-title">فئات المدونة</h4>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="categories">
+                                        <li>
+                                            <a href="#">نصايح صحيه <span>(62)</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">طب القلب <span>(27)</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">رعاية صحية <span>(41)</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">استشاره طبيه <span>(16)</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#">وقايه طبيه <span>(55)</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('components/footer') %>
+        </div>
+
+        <script src="/js/jquery-3.6.0.min.js"></script>
+
+        <script src="/js/bootstrap.bundle.min.js"></script>
+
+        <script src="/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+
+        <script src="/js/script.js"></script>
+    </body>
+</html>

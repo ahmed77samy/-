@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <title>Doccure-Cardiology</title>
+        <link type="image/x-icon" href="/img/favicon.png" rel="icon" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/plugins/fontawesome/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <%- include("components/header") %>
+
+            <div class="breadcrumb-bar">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-md-12 col-12">
+                            <nav aria-label="breadcrumb" class="page-breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">الرئيسيه</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">اتصل بنا</li>
+                                </ol>
+                            </nav>
+                            <h2 class="breadcrumb-title">اتصل بنا</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="contact-section">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-md-12 text-center">
+                            <h3 class="mb-4">تواصل معنا</h3>
+                            <p>طبيب رائع إذا كنت بحاجة إلى أحد أفراد عائلتك للحصول على مساعدة فورية فعالة أو علاج طارئ أو استشارة بسيطة.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 d-flex">
+                            <div class="contact-box flex-fill">
+                                <div class="infor-img">
+                                    <div class="image-circle">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="infor-details text-center">
+                                    <label>رقم الهاتف</label>
+                                    <p><bdi>+1 123 456 789</bdi></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex">
+                            <div class="contact-box flex-fill">
+                                <div class="infor-img">
+                                    <div class="image-circle bg-primary">
+                                        <i class="far fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="infor-details text-center">
+                                    <label>ايميل</label>
+                                    <p>info@mail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex">
+                            <div class="contact-box flex-fill">
+                                <div class="infor-img">
+                                    <div class="image-circle">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="infor-details text-center">
+                                    <label>الموقع</label>
+                                    <p>معهد الحاسب الالي الكينج مريوط الاسكندريه , مصر</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-form">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2>ابق علي تواصل</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الاسم <span>*</span></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>البريد الالكتروني <span>*</span></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>الموضوع</label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>التعليقات <span>*</span></label>
+                                            <textarea class="form-control"> </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn bg-primary">ارسال الرساله</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-map d-flex">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3419.053035383576!2d29.777559784549602!3d31.024771978549314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f592dab44ae28b%3A0x1339303410a753c7!2z2KfZhNmF2LnYp9mH2K8g2KfZhNi52YTZitinINmD2YrZhtisINmF2LHZitmI2Lc!5e0!3m2!1sar!2seg!4v1641156224262!5m2!1sar!2seg" allowfullscreen="" loading="lazy"></iframe>
+            </section>
+
+            <%- include("components/footer") %> 
+        </div>
+
+        <script src="/js/jquery-3.6.0.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/slick.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

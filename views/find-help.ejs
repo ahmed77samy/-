@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <title>Doccure-Cardiology</title>
+
+        <link type="image/x-icon" href="/img/favicon.png" rel="icon" />
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="/plugins/fontawesome/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css" />
+
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <%- include('components/header')%>
+            
+            <div class="breadcrumb-bar">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-md-12 col-12">
+                            <nav aria-label="breadcrumb" class="page-breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">الرئيسيه</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">المساعده الطبيه</li>
+                                </ol>
+                            </nav>
+                            <h2 class="breadcrumb-title">المساعده الطبيه</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section find-help">
+                <div class="container">
+                    <div class="banner-wrapper">
+                        <div class="banner-header text-center">
+                            <h1>اوجد المساعده الطبيه</h1>
+                        </div>
+                        <form class="banner-form" action="/report" id="find_help">
+                            <div class="tg-searchbulder">
+                                <div id="tg-categoryslider" class="tg-categoryslider tg-category">
+                                    <span data-id="coldscategory" class="item tg-radio">
+                                        <input type="radio" id="colds" name="maincategory" value="colds" checked="" />
+                                        <label for="colds">
+                                            <span><img src="/img/icons/icon-08.png" alt="image description" /></span>
+                                            <span>نزلات البرد</span>
+                                        </label>
+                                    </span>
+                                    <span data-id="heartscategory" class="item tg-radio">
+                                        <input type="radio" id="hearts" name="maincategory" value="hearts" />
+                                        <label for="hearts">
+                                            <span><img src="/img/icons/icon-09.png" alt="image description" /></span>
+                                            <span>امراض القلب</span>
+                                        </label>
+                                    </span>
+                                    <span data-id="bonescategory" class="item tg-radio">
+                                        <input type="radio" id="bones" name="maincategory" value="bones" />
+                                        <label for="bones">
+                                            <span><img src="/img/icons/icon-10.png" alt="image description" /></span>
+                                            <span>امراض العظام</span>
+                                        </label>
+                                    </span>
+                                    <span data-id="eyescategory" class="item tg-radio">
+                                        <input type="radio" id="eyes" name="maincategory" value="eyes" />
+                                        <label for="eyes">
+                                            <span><img src="/img/icons/icon-11.png" alt="image description" /></span>
+                                            <span>امراض العيون</span>
+                                        </label>
+                                    </span>
+                                </div>
+                                <div id="tg-subcategories" class="tg-subcategories">
+                                    <p class="text-center text-danger" id="form_error"></p>
+                                    <div id="coldscategory" class="tg-tabcontent">
+                                        <% for(let indication of coldsIndications) { %>
+                                        <span class="tg-checkbox tg-subcategorycheckbox">
+                                            <input type="checkbox" id="<%= indication %>" name="coldscategory" value="<%= indication %>" />
+                                            <label for="<%= indication %>">
+                                                <span><img src="/img/icons/icon-08.png" alt="image description" /></span>
+                                                <span><%= indication %></span>
+                                            </label>
+                                        </span>
+                                        <% } %>
+                                    </div>
+                                    <div id="heartscategory" class="tg-tabcontent">
+                                        <% for(let indication of heartsIndications) { %>
+                                            <span class="tg-checkbox tg-subcategorycheckbox">
+                                                <input type="checkbox" id="<%= indication %>" name="heartscategory" value="<%= indication %>" />
+                                                <label for="<%= indication %>">
+                                                    <span><img src="/img/icons/icon-21.png" alt="image description" /></span>
+                                                    <span><%= indication %></span>
+                                                </label>
+                                            </span>
+                                        <% } %>
+                                    </div>
+                                    <div id="bonescategory" class="tg-tabcontent">
+                                        <% for(let indication of bonesIndications) { %>
+                                            <span class="tg-checkbox tg-subcategorycheckbox">
+                                                <input type="checkbox" id="<%= indication %>" name="bonescategory" value="<%= indication %>" />
+                                                <label for="<%= indication %>">
+                                                    <span><img src="/img/icons/icon-16.png" alt="image description" /></span>
+                                                    <span><%= indication %></span>
+                                                </label>
+                                            </span>
+                                        <% } %>
+                                    </div>
+                                    <div id="eyescategory" class="tg-tabcontent">
+                                        <% for(let indication of eyesIndications) { %>
+                                            <span class="tg-checkbox tg-subcategorycheckbox">
+                                                <input type="checkbox" id="<%= indication %>" name="eyescategory" value="<%= indication %>" />
+                                                <label for="<%= indication %>">
+                                                    <span><img src="/img/icons/icon-16.png" alt="image description" /></span>
+                                                    <span><%= indication %></span>
+                                                </label>
+                                            </span>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-info submit-btn text-white mx-auto d-block mt-5" type="submit">ابدء الكشف الطبي</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <%- include('components/footer')%>
+        </div>
+        <script src="/js/jquery-3.6.0.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/slick.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

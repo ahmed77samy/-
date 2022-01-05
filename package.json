@@ -1,0 +1,27 @@
+{
+  "name": "medical",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "serve": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.7",
+    "mongoose": "^5.12.10"
+  },
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

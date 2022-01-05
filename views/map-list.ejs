@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Doccure-Cardiology</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <link href="/img/favicon.png" rel="icon" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/plugins/fontawesome/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="/plugins/fontawesome/css/all.min.css" />
+        <link rel="stylesheet" href="/plugins/fancybox/jquery.fancybox.min.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body class="map-page">
+        <div class="main-wrapper">
+            <%- include('components/header')%>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-12 map-right">
+                            <h4 class="mb-3">وجدنا <%= hospitals.length %> مستشفي</h4>
+
+                            <% for(let hospital of hospitals) { %>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="doctor-widget">
+                                        <div class="doc-info-right">
+                                            <div class="doctor-img">
+                                                <a href="javascript:void(0);">
+                                                    <img src="<%= hospital.image %>" class="img-fluid" alt="User Image" />
+                                                </a>
+                                            </div>
+                                            <div class="doc-info-cont">
+                                                <h4 class="doc-name"><a href="javascript:void(0);"><%= hospital.hos_name %></a></h4>
+                                                <p class="doc-speciality"><%= hospital.description %></p>
+                                                <div class="rating">
+                                                    <i class="fas fa-star filled"></i>
+                                                    <i class="fas fa-star filled"></i>
+                                                    <i class="fas fa-star filled"></i>
+                                                    <i class="fas fa-star filled"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span class="d-inline-block average-rating"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="doc-info-left">
+                                            <div class="clini-infos">
+                                                <ul>
+                                                    <li><i class="far fa-thumbs-up"></i> 98%</li>
+                                                    <li><i class="far fa-comment"></i> 17 تعليق</li>
+                                                    <li><i class="fas fa-map-marker-alt"></i> <%= location.location %> ,مصر</li>
+                                                    <li><i class="far fa-money-bill-alt"></i><%= hospital.amount %><i class="fas fa-info-circle" data-bs-toggle="tooltip" title="Lorem Ipsum"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+
+
+                        <div class="col-xl-5 col-lg-12 map-left">
+                            <div id="map" class="map-listing"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('components/footer')%>
+        </div>
+
+        <script>
+            var data_hospitals = <%- JSON.stringify(hospitals) %>;
+            var data_location = <%- JSON.stringify(location) %>;
+        </script>
+
+        <script src="/js/jquery-3.6.0.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/plugins/fancybox/jquery.fancybox.min.js"></script>
+        <script src="/js/script.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&region=EG&language=ar&libraries=places"></script>
+        <script src="/js/map.js"></script>
+    </body>
+</html>
